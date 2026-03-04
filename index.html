@@ -1,192 +1,122 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מרדכי - KalfaCorp Digital Services</title>
-    
-    <!-- ייבוא פונטים ואייקונים -->
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #0f172a;
-            --accent: #d4af37;
-            --bg: #f8fafc;
-        }
+import React from 'react';
+import { 
+  Phone, 
+  MessageCircle, 
+  ExternalLink, 
+  UserPlus, 
+  CheckCircle2,
+  ChevronLeft,
+  ShieldCheck
+} from 'lucide-react';
 
-        body { 
-            font-family: 'Assistant', sans-serif; 
-            background-color: var(--bg); 
-            margin: 0; 
-            display: flex; 
-            justify-content: center;
-            color: #1e293b;
-        }
+const App = () => {
+  const phoneNumber = "972538229180";
+  const whatsappText = encodeURIComponent("היי מרדכי, אני מעוניין בפרטים על בניית כרטיס ביקור דיגיטלי לעסק שלי.");
+  const shalomCardUrl = "https://shalomtaxi.netlify.app/";
+  
+  // שם קובץ איש הקשר להורדה
+  const vcfFileName = "mottikalfa.vcf"; 
 
-        .card { 
-            background: #ffffff; 
-            width: 100%; 
-            max-width: 450px; 
-            min-height: 100vh; 
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-bottom: 8px solid var(--accent);
-        }
-
-        .header {
-            background: var(--primary); 
-            padding: 60px 30px; 
-            text-align: center;
-        }
-
-        .header h2 {
-            color: var(--accent);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.3em;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .header h1 {
-            color: #ffffff;
-            font-size: 32px;
-            font-weight: 300;
-            margin: 0;
-        }
-
-        .header h1 span { font-weight: 700; color: var(--accent); }
-
-        .main-content { 
-            padding: 40px 30px; 
-            text-align: center; 
-            flex-grow: 1; 
-        }
-
-        .main-content h3 { 
-            font-size: 22px; 
-            font-weight: 700; 
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .main-content p { 
-            color: #64748b; 
-            line-height: 1.6; 
-            margin-bottom: 35px; 
-            font-size: 17px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            margin-bottom: 15px;
-            font-weight: 700;
-            font-size: 18px;
-            transition: all 0.2s;
-        }
-
-        .btn-whatsapp { background: var(--accent); color: var(--primary); }
-        .btn-black { background: var(--primary); color: #fff; }
-
-        .grid-actions { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 15px; 
-            margin-top: 20px; 
-        }
-
-        .btn-small {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 15px;
-        }
-
-        .btn-small i { color: var(--accent); }
-
-        .features {
-            margin-top: 40px;
-            text-align: right;
-            padding: 20px;
-            background: #f1f5f9;
-            border-radius: 15px;
-        }
-
-        .feature-item { 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            margin-bottom: 10px; 
-            font-size: 14px; 
-        }
-
-        .feature-item i { color: #10b981; }
-
-        .footer { 
-            padding: 30px 20px; 
-            text-align: center; 
-            color: #94a3b8; 
-            font-size: 10px; 
-            letter-spacing: 2px;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <div class="header">
-            <h2>KalfaCorp Digital Services</h2>
-            <h1>מרדכי <span>דיגיטל</span></h1>
+  return (
+    <div className="min-h-screen bg-[#f8fafc] flex justify-center items-center p-0 sm:p-4 font-sans text-right" dir="rtl">
+      {/* Container הראשי של הכרטיס */}
+      <div className="w-full max-w-md bg-white min-h-screen sm:min-h-[550px] sm:rounded-[2rem] shadow-[0_15px_50px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col border-b-4 border-[#d4af37]">
+        
+        {/* כותרת מיתוגית */}
+        <div className="bg-[#0f172a] pt-16 pb-14 px-8 text-center relative">
+          <div className="relative z-10">
+            <h2 className="text-[#d4af37] text-[9px] font-bold tracking-[0.4em] mb-3 uppercase opacity-80">KalfaCorp Digital Services</h2>
+            <h1 className="text-white text-2xl font-extralight tracking-tight leading-tight">
+              כרטיס ביקור <span className="font-semibold text-[#d4af37]">דיגיטלי</span>
+            </h1>
+          </div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
         </div>
 
-        <div class="main-content">
-            <h3>פתרונות דיגיטליים לעסקים חכמים</h3>
-            <p>מומחה לבניית נוכחות דיגיטלית במינימום עלות ומקסימום רווח. כרטיסי ביקור, אוטומציות וייעוץ לכדאיות עסקית.</p>
-
-            <a href="https://wa.me/972538229180?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%A8%D7%93%D7%9B%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%9B%D7%A8%D7%98%D7%99%D7%A1%20%D7%91%D7%99%D7%A7%D7%95%D7%A8%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%D7%99." class="btn btn-whatsapp">
-                <span><i class="fab fa-whatsapp"></i> דבר איתי בוואטסאפ</span>
-                <i class="fas fa-chevron-left"></i>
-            </a>
-
-            <a href="https://shalomtaxi.netlify.app/" target="_blank" class="btn btn-black">
-                <span><i class="fas fa-external-link-alt"></i> תיק עבודות לדוגמא</span>
-                <i class="fas fa-chevron-left"></i>
-            </a>
-
-            <div class="grid-actions">
-                <a href="tel:0538229180" class="btn-small">
-                    <i class="fas fa-phone"></i>
-                    <span>התקשר</span>
-                </a>
-                <a href="mottikalfa.vcf" download class="btn-small">
-                    <i class="fas fa-user-plus"></i>
-                    <span>שמור איש קשר</span>
-                </a>
-            </div>
-
-            <div class="features">
-                <div class="feature-item"><i class="fas fa-check"></i> הקמת עסקים במינימום עלות</div>
-                <div class="feature-item"><i class="fas fa-check"></i> כרטיסי ביקור דיגיטליים ללא מנוי</div>
-                <div class="feature-item"><i class="fas fa-check"></i> ליווי אישי עד להפקת רווחים</div>
-            </div>
+        {/* תוכן מרכזי */}
+        <div className="px-10 pt-12 pb-8 text-center">
+          <h3 className="text-[#0f172a] text-xl font-semibold mb-4 font-assistant tracking-tight">הדרך המקצועית לשמור על קשר</h3>
+          <p className="text-slate-500 text-base leading-relaxed font-light">
+            בניית כרטיסי ביקור חכמים לעצמאיים ובעלי עסקים. 
+            <br />
+            הלקוחות שומרים את הפרטים שלך בטלפון בלחיצה אחת.
+          </p>
         </div>
 
-        <div class="footer">KALFACORP DIGITAL SERVICES © 2024</div>
+        {/* כפתורי פעולה */}
+        <div className="px-8 space-y-3 flex-grow">
+          {/* כפתור וואטסאפ */}
+          <a 
+            href={`https://wa.me/${phoneNumber}?text=${whatsappText}`}
+            className="flex items-center justify-between bg-[#d4af37] hover:bg-[#c5a059] text-[#0f172a] p-4 rounded-xl transition-all shadow-md active:scale-[0.98] group"
+          >
+            <div className="flex items-center gap-3">
+              <MessageCircle size={20} fill="#0f172a" strokeWidth={1} />
+              <span className="font-bold text-lg">הזמן כרטיס לעסק שלך</span>
+            </div>
+            <ChevronLeft size={18} className="opacity-30 group-hover:translate-x-[-4px] transition-transform" />
+          </a>
+
+          {/* כפתור תיק עבודות */}
+          <a 
+            href={shalomCardUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between bg-[#0f172a] text-white p-4 rounded-xl transition-all shadow-sm hover:bg-[#1e293b] active:scale-[0.98] group"
+          >
+            <div className="flex items-center gap-3">
+              <ExternalLink size={18} className="text-[#d4af37]" />
+              <span className="font-medium text-base text-slate-100">צפה בתיק עבודות</span>
+            </div>
+            <ChevronLeft size={18} className="opacity-30" />
+          </a>
+
+          {/* כפתורים משניים */}
+          <div className="grid grid-cols-2 gap-3 pt-2">
+            <a 
+              href={`tel:${phoneNumber}`}
+              className="flex items-center justify-center gap-2 bg-slate-50 border border-slate-100 p-3 rounded-xl text-[#0f172a] font-bold hover:bg-slate-100 transition-all text-xs"
+            >
+              <Phone size={14} className="text-[#d4af37]" />
+              <span>התקשר אלי</span>
+            </a>
+            
+            <a 
+              href={vcfFileName}
+              download={vcfFileName}
+              className="flex items-center justify-center gap-2 bg-slate-50 border border-slate-100 p-3 rounded-xl text-[#0f172a] font-bold hover:bg-slate-100 transition-all text-xs"
+            >
+              <UserPlus size={14} className="text-[#d4af37]" />
+              <span>שמור איש קשר</span>
+            </a>
+          </div>
+        </div>
+
+        {/* יתרונות ותועלת הלקוח - הוספת התועלת החדשה */}
+        <div className="px-8 py-6 mt-6 bg-slate-50/50 border-t border-slate-100">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
+              <ShieldCheck size={14} className="text-[#d4af37]" />
+              <span>כששומרים אותך - אתה הופך מ"מספר זר" למותג מוכר</span>
+            </div>
+            <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
+              <CheckCircle2 size={14} className="text-green-500" />
+              <span>תשלום חד פעמי - ללא דמי מנוי</span>
+            </div>
+            <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
+              <CheckCircle2 size={14} className="text-green-500" />
+              <span>זמינות מלאה מכל מכשיר</span>
+            </div>
+          </div>
+        </div>
+
+        {/* פוטר */}
+        <div className="p-6 text-center">
+          <p className="text-slate-400 font-bold text-[8px] tracking-[0.4em] uppercase">KalfaCorp Digital Services</p>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+  );
+};
+
+export default App;
