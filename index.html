@@ -18,43 +18,49 @@ const App = () => {
   const vcfFileName = "mottikalfa.vcf"; 
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] flex justify-center items-center p-0 sm:p-4 font-sans text-right" dir="rtl">
-      {/* Container הראשי של הכרטיס */}
-      <div className="w-full max-w-md bg-white min-h-screen sm:min-h-[550px] sm:rounded-[2rem] shadow-[0_15px_50px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col border-b-4 border-[#d4af37]">
+    <div className="min-h-screen bg-[#f1f5f9] flex justify-center items-center p-0 sm:p-6 font-sans text-right" dir="rtl">
+      {/* Container הראשי - עיצוב יוקרתי ומהודק */}
+      <div className="w-full max-w-md bg-white min-h-screen sm:min-h-[650px] sm:rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col border-b-[6px] border-[#d4af37]">
         
-        {/* כותרת מיתוגית */}
-        <div className="bg-[#0f172a] pt-16 pb-14 px-8 text-center relative">
+        {/* Header - כחול עמוק עם נגיעות זהב */}
+        <div className="bg-[#0f172a] pt-20 pb-16 px-8 text-center relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-[#d4af37] text-[9px] font-bold tracking-[0.4em] mb-3 uppercase opacity-80">KalfaCorp Digital Services</h2>
-            <h1 className="text-white text-2xl font-extralight tracking-tight leading-tight">
+            <h2 className="text-[#d4af37] text-[10px] font-bold tracking-[0.5em] mb-4 uppercase opacity-90">KalfaCorp Digital</h2>
+            <h1 className="text-white text-3xl font-extralight tracking-tight leading-tight">
               כרטיס ביקור <span className="font-semibold text-[#d4af37]">דיגיטלי</span>
             </h1>
           </div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+          {/* אלמנט עיצובי עדין ברקע */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-[#d4af37]/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-500/5 rounded-full -ml-12 -mb-12 blur-2xl"></div>
         </div>
 
-        {/* תוכן מרכזי */}
+        {/* תוכן מרכזי - טיפוגרפיה אחידה ועוצמתית */}
         <div className="px-10 pt-12 pb-8 text-center">
-          <h3 className="text-[#0f172a] text-xl font-semibold mb-4 font-assistant tracking-tight">הדרך המקצועית לשמור על קשר</h3>
-          <p className="text-slate-500 text-base leading-relaxed font-light">
-            בניית כרטיסי ביקור חכמים לעצמאיים ובעלי עסקים. 
+          <h3 className="text-[#1e293b] text-2xl font-bold mb-4 tracking-tight">הדרך המקצועית לשמור על קשר</h3>
+          
+          {/* שתי השורות כעת באותו גודל ועוצמה למראה אחיד */}
+          <p className="text-slate-600 text-[15px] leading-[1.7] font-normal max-w-[320px] mx-auto">
+            אנחנו בונים כרטיסי ביקור חכמים לעצמאיים.
             <br />
-            הלקוחות שומרים את הפרטים שלך בטלפון בלחיצה אחת.
+            הלקוחות שלך שומרים אותך בטלפון בלחיצה אחת.
           </p>
         </div>
 
-        {/* כפתורי פעולה */}
-        <div className="px-8 space-y-3 flex-grow">
-          {/* כפתור וואטסאפ */}
+        {/* כפתורי פעולה בולטים */}
+        <div className="px-8 space-y-4 flex-grow">
+          {/* כפתור וואטסאפ - דגש על הנעה לפעולה */}
           <a 
             href={`https://wa.me/${phoneNumber}?text=${whatsappText}`}
-            className="flex items-center justify-between bg-[#d4af37] hover:bg-[#c5a059] text-[#0f172a] p-4 rounded-xl transition-all shadow-md active:scale-[0.98] group"
+            className="flex items-center justify-between bg-[#d4af37] hover:bg-[#c5a059] text-[#0f172a] p-5 rounded-2xl transition-all shadow-lg active:scale-[0.97] group"
           >
-            <div className="flex items-center gap-3">
-              <MessageCircle size={20} fill="#0f172a" strokeWidth={1} />
+            <div className="flex items-center gap-4">
+              <div className="bg-[#0f172a]/10 p-2 rounded-lg">
+                <MessageCircle size={22} fill="#0f172a" strokeWidth={1} />
+              </div>
               <span className="font-bold text-lg">הזמן כרטיס לעסק שלך</span>
             </div>
-            <ChevronLeft size={18} className="opacity-30 group-hover:translate-x-[-4px] transition-transform" />
+            <ChevronLeft size={20} className="opacity-40 group-hover:translate-x-[-4px] transition-transform" />
           </a>
 
           {/* כפתור תיק עבודות */}
@@ -62,57 +68,61 @@ const App = () => {
             href={shalomCardUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between bg-[#0f172a] text-white p-4 rounded-xl transition-all shadow-sm hover:bg-[#1e293b] active:scale-[0.98] group"
+            className="flex items-center justify-between bg-[#0f172a] text-white p-5 rounded-2xl transition-all shadow-md hover:bg-[#1e293b] active:scale-[0.97] group"
           >
-            <div className="flex items-center gap-3">
-              <ExternalLink size={18} className="text-[#d4af37]" />
-              <span className="font-medium text-base text-slate-100">צפה בתיק עבודות</span>
+            <div className="flex items-center gap-4">
+              <div className="bg-white/10 p-2 rounded-lg">
+                <ExternalLink size={20} className="text-[#d4af37]" />
+              </div>
+              <span className="font-medium text-base">צפה בתיק עבודות</span>
             </div>
-            <ChevronLeft size={18} className="opacity-30" />
+            <ChevronLeft size={20} className="opacity-40" />
           </a>
 
-          {/* כפתורים משניים */}
-          <div className="grid grid-cols-2 gap-3 pt-2">
+          {/* שורת פעולות מהירות */}
+          <div className="grid grid-cols-2 gap-4 pt-2">
             <a 
               href={`tel:${phoneNumber}`}
-              className="flex items-center justify-center gap-2 bg-slate-50 border border-slate-100 p-3 rounded-xl text-[#0f172a] font-bold hover:bg-slate-100 transition-all text-xs"
+              className="flex items-center justify-center gap-3 bg-white border border-slate-200 p-4 rounded-xl text-[#0f172a] font-bold hover:bg-slate-50 transition-all shadow-sm active:scale-95"
             >
-              <Phone size={14} className="text-[#d4af37]" />
-              <span>התקשר אלי</span>
+              <Phone size={16} className="text-[#d4af37]" />
+              <span className="text-sm">התקשר אלי</span>
             </a>
             
             <a 
               href={vcfFileName}
               download={vcfFileName}
-              className="flex items-center justify-center gap-2 bg-slate-50 border border-slate-100 p-3 rounded-xl text-[#0f172a] font-bold hover:bg-slate-100 transition-all text-xs"
+              className="flex items-center justify-center gap-3 bg-white border border-slate-200 p-4 rounded-xl text-[#0f172a] font-bold hover:bg-slate-50 transition-all shadow-sm active:scale-95"
             >
-              <UserPlus size={14} className="text-[#d4af37]" />
-              <span>שמור איש קשר</span>
+              <UserPlus size={16} className="text-[#d4af37]" />
+              <span className="text-sm">שמור איש קשר</span>
             </a>
           </div>
         </div>
 
-        {/* יתרונות ותועלת הלקוח - הוספת התועלת החדשה */}
-        <div className="px-8 py-6 mt-6 bg-slate-50/50 border-t border-slate-100">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-              <ShieldCheck size={14} className="text-[#d4af37]" />
-              <span>כששומרים אותך - אתה הופך מ"מספר זר" למותג מוכר</span>
+        {/* חטיבת הוכחה חברתית / יתרונות */}
+        <div className="px-8 py-8 mt-8 bg-slate-50 border-t border-slate-100">
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 text-slate-600 text-[13px] font-medium">
+              <ShieldCheck size={16} className="text-[#d4af37]" />
+              <span>הופך אותך מ"מספר זר" למותג מוכר</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-              <CheckCircle2 size={14} className="text-green-500" />
+            <div className="flex items-center gap-3 text-slate-600 text-[13px] font-medium">
+              <CheckCircle2 size={16} className="text-green-500" />
               <span>תשלום חד פעמי - ללא דמי מנוי</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-              <CheckCircle2 size={14} className="text-green-500" />
+            <div className="flex items-center gap-3 text-slate-600 text-[13px] font-medium">
+              <CheckCircle2 size={16} className="text-green-500" />
               <span>זמינות מלאה מכל מכשיר</span>
             </div>
           </div>
         </div>
 
-        {/* פוטר */}
-        <div className="p-6 text-center">
-          <p className="text-slate-400 font-bold text-[8px] tracking-[0.4em] uppercase">KalfaCorp Digital Services</p>
+        {/* Footer */}
+        <div className="py-8 text-center bg-slate-50">
+          <p className="text-slate-400 font-bold text-[9px] tracking-[0.5em] uppercase opacity-60">
+            © 2024 KalfaCorp Digital
+          </p>
         </div>
       </div>
     </div>
